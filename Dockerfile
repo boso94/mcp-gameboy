@@ -30,4 +30,4 @@ VOLUME ["/app/roms"]
 EXPOSE 3001
 
 # Default command uses stdio transport
-CMD ["node", "dist/index.js --sse"]
+CMD ["node", "dist/index.js", "--sse"]
