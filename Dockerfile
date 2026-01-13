@@ -25,5 +25,9 @@ RUN npm run build
 # Create .env file with default configuration
 RUN echo "SERVER_PORT=3001\nROM_PATH=/app/roms/PokemonRed.gb" > .env
 
+VOLUME ["/app/roms"]
+
+EXPOSE 3001
+
 # Default command uses stdio transport
 CMD ["node", "dist/index.js --sse"]
