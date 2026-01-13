@@ -6,7 +6,7 @@ services:
     ports:
       - "3001:3001"
     volumes:
-      - /home/docker/mcp-gameboy_config/rom:/app/roms
+      - /home/docker/mcp-gameboy_config/rom:./roms
     restart: unless-stopped
     # opzionale: override config
     #environment:

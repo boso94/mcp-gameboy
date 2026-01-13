@@ -17,15 +17,15 @@ RUN npm ci
 COPY . .
 
 # Make sure the ROM directory exists
-RUN mkdir -p /app/roms
+RUN mkdir -p roms
 
 # Build TypeScript
 RUN npm run build
 
 # Create .env file with default configuration
-RUN echo "SERVER_PORT=3001\nROM_PATH=/app/roms/PokemonRed.gb" > .env
+RUN echo "SERVER_PORT=3001\nROM_PATH=.roms/PokemonRed.gb" > .env
 
-VOLUME ["/app/roms"]
+VOLUME ["./roms"]
 
 EXPOSE 3001
 
