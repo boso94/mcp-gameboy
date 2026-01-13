@@ -6,9 +6,5 @@ services:
     ports:
       - "3001:3001"
     volumes:
-      - /home/docker/mcp-gameboy_config/rom:./roms
+      - /home/docker/mcp-gameboy_config/rom:/app/roms
     restart: unless-stopped
-    # opzionale: override config
-    #environment:
-    #  SERVER_PORT: "3001"
-    #  ROM_PATH: "/app/roms/PokemonRed.gb"

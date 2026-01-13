@@ -17,17 +17,17 @@ RUN npm ci
 COPY . .
 
 # Make sure the ROM directory exists
-RUN mkdir -p roms
+RUN mkdir -p /app/roms
 
 # Build TypeScript
 RUN npm run build
 
 # Create .env file with default configuration
-RUN echo "SERVER_PORT=3001\nROM_PATH=.roms/PokemonRed.gb" > .env
+RUN echo "SERVER_PORT=3001\nROM_PATH=/app/roms/PokemonRed.gb" > .env
 
-VOLUME ["./roms"]
+VOLUME ["/app/roms"]
 
 EXPOSE 3001
 
-# Default command uses stdio transport
-CMD ["node", "dist/index.js", "--sse"]
+# Command to run the application with SSE enabled
+CMD ["npm", "run", "start-sse"]
