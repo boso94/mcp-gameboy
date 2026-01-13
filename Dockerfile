@@ -23,7 +23,7 @@ RUN mkdir -p roms
 RUN npm run build
 
 # Create .env file with default configuration
-RUN echo "SERVER_PORT=3001\nROM_PATH=./roms/dangan.gb" > .env
+RUN echo "SERVER_PORT=3001\nROM_PATH=./roms/PokemonRed.gb" > .env
 
 # Default command uses stdio transport
-CMD ["node", "dist/index.js"]
+CMD ["node", "dist/index.js --sse"]
